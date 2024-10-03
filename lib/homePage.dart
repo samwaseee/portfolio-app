@@ -52,30 +52,30 @@ class Homepage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Halishoror, Chattogram, Bangladesh',
                           style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                     Row(
                       children: [
                         IconButton(
-                          icon: FaIcon(FontAwesomeIcons.globe, color: Colors.white),
+                          icon: const FaIcon(FontAwesomeIcons.globe, color: Colors.white),
                           onPressed: () => _launchURL('https://samiur-rahman-wasi.vercel.app'),
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         IconButton(
-                          icon: FaIcon(FontAwesomeIcons.github, color: Colors.white),
+                          icon: const FaIcon(FontAwesomeIcons.github, color: Colors.white),
                           onPressed: () => _launchURL('https://github.com/samwaseee'),
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         IconButton(
-                          icon: FaIcon(FontAwesomeIcons.linkedin, color: Colors.white),
+                          icon: const FaIcon(FontAwesomeIcons.linkedin, color: Colors.white),
                           onPressed: () => _launchURL('https://www.linkedin.com/in/samiur-rahman-wasi'),
                         ),
                       ],
@@ -118,11 +118,11 @@ class Homepage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Projects',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   _buildProjectButton(
                     context,
                     'Starlight University',
@@ -155,7 +155,7 @@ class Homepage extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 16.0),
                 padding: const EdgeInsets.all(16.0),
 
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -195,7 +195,7 @@ class Homepage extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 16.0),
                 padding: const EdgeInsets.all(16.0),
 
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -233,12 +233,9 @@ class Homepage extends StatelessWidget {
 
   void _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
-    print('Attempting to launch $url');
     if (await canLaunchUrl(uri)) {
-      print('Launching $url');
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
+      await launchUrl(uri);
     } else {
-      print('Could not launch $url');
       throw 'Could not launch $url';
     }
   }
@@ -276,19 +273,19 @@ class Homepage extends StatelessWidget {
               width: 50,
               fit: BoxFit.cover,
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     description,
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                    style: const TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ],
               ),
@@ -323,7 +320,7 @@ class Homepage extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -332,7 +329,7 @@ class Homepage extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               description,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 color: Colors.grey,
               ),

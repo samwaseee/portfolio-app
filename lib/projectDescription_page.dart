@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // Project Description Page
 class ProjectDescriptionPage extends StatelessWidget {
@@ -49,10 +50,37 @@ Key Features:
     }
   }
 
+  // Function to get the project URL based on the project title
+  String getProjectUrl(String title) {
+    switch (title) {
+      case 'Starlight University':
+        return 'https://starlight-un-edu.vercel.app';
+      case 'Care Camp':
+        return 'https://care-camp-a12.web.app';
+      case 'BookedInn':
+        return 'https://bookedinn-a11.web.app';
+      case 'Sam Travel':
+        return 'https://sam-travels-a10.web.app';
+      default:
+        return 'samiur-rahman-wasi.vercel.app';
+    }
+  }
+
+  // Function to launch URL
+  void _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Get the full description based on the project title
+    // Get the full description and URL based on the project title
     final projectDescription = getFullDescription(projectTitle);
+    final projectUrl = getProjectUrl(projectTitle);
 
     return Scaffold(
       backgroundColor: Colors.black, // Set background to black
@@ -84,6 +112,18 @@ Key Features:
               style: const TextStyle(
                 fontSize: 16,
                 color: Colors.white70, // Slightly lighter text color for the description
+              ),
+            ),
+            const SizedBox(height: 16),
+            InkWell(
+              onTap: () => _launchURL(projectUrl),
+              child: Text(
+                projectUrl,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.blue, // URL text color
+                  decoration: TextDecoration.underline, // Underline the URL text
+                ),
               ),
             ),
           ],
