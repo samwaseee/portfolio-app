@@ -23,10 +23,8 @@ This is a Flutter-based portfolio application that showcases my skills, projects
 
 ## Screenshots
 
-![localhost_51369_ (3)](https://github.com/user-attachments/assets/b0d015d9-1284-4ee2-9f39-d46873000bd7)
+![photo-collage png](https://github.com/user-attachments/assets/12c3ea44-6754-4b71-ad69-df14fe04f68e)
 
-![localhost_52409_](https://github.com/user-attachments/assets/89227a35-53f3-4bdb-bc9e-f2025435e919)
-![localhost_52409_ (1)](https://github.com/user-attachments/assets/77ea2dc1-ac90-4562-9df8-5e5e4706a3fa)
 
 
 ## How to Run
